@@ -1,0 +1,50 @@
+==========================================
+
+APPLICATION INSTALLATION INSTRUCTIONS
+
+==========================================
+
+Linux:
+
+Dependencies:
+	Python, PyGame, SDL
+
+Optional:	
+	wxPython
+
+Local Installation:
+	unzip package to home directory
+	cd into home directory
+	run: "python ./mstation.py"
+
+System-wide Installation:
+	chmod +x setup.py
+	./setup.py
+	/usr/local/bin/mstation
+
+Uninstall:
+	chmod +x setup.py
+	./setup.py uninstall
+
+==========================================
+
+Mac, Windows:
+
+Note: 
+	Mac/Win users can just run from the 
+	local installation directory without
+	copying files to the python sitepkgs
+	directory.
+
+Dependencies:
+	Python, PyGame, SDL
+
+Optional:
+	wxPython
+
+Installation Procedure:
+	unzip the package
+	cd into package directory
+	python ./mstation.py
+	
+==========================================

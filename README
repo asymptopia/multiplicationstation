@@ -1,0 +1,53 @@
+===============================
+MultiplicationStation-0.6.3
+January 17, 2010
+===============================
+
+2.	Bugfix for windows: os.getenv('HOME') -> os.getenv('USERPROFILE')
+
+===============================
+MultiplicationStation-0.6.2
+January 17, 2010
+===============================
+
+1.	If installed (installation only applies to Linux now, Win/Mac run from within package directory),
+	then .mstation_config_master located at /var/games/MultiplicaitonStation/.mstation_config_master 
+	and copied -> $HOME/.mstation_config at user's first run.  Previously ran into permission problems 
+	if users try to change settings via admin.  Now every user takes their own copy of the config file 
+	and saves in their $HOME.
+
+
+===============================
+MultiplicationStation-0.6.1
+December 27, 2009
+===============================
+
+1.	Display init probs on windows fixed by adding lines 141-143 mstation.py
+
+		if self.env.OS=='win':
+			os.environ['SDL_VIDEODRIVER'] = 'windib'
+		pygame.display.init()
+		pygame.init()
+
+
+===============================
+MultiplicationStation-0.6.0
+December 23, 2009
+===============================
+
+1. 	wx now merely an option (use -wx command line argument)
+
+2. 	defaults changed for minimum resource requirements (ie. fireworks off, etc)
+
+3. 	sound is off by default; toggle on via admin config or manually editing
+	the config file.  If running from the install directory then the config
+	file is at: ./Globals/globals/config
+	
+	If installed (Linux only) then config located at:
+	/var/games/MultiplicationStation/Globals/globals/config
+	
+	In either case, if you mess-up the config, just copy config_default over
+	to config.  
+
+4.	Screensaver/splash is off by defualt.  Toggle on in config via admin gui 
+	(using optional -wx flag) or manually as per above.
