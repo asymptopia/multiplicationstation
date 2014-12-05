@@ -1,9 +1,24 @@
 ===============================
+MultiplicationStation-0.6.8
+December 5, 2014
+===============================
+
+1. Updated to work with wxpython-3
+
+2. Admin interface still requires -wx flag arg:
+	"python mstation.py -wx"
+
+3. Reduced set of Admin config variables offered through GUI
+
+4. Another release with further improvements to admin interface
+	will be undertaken soon.  
+
+===============================
 MultiplicationStation-0.6.3
 January 17, 2010
 ===============================
 
-2.	Bugfix for windows: os.getenv('HOME') -> os.getenv('USERPROFILE')
+1.	Bugfix for windows: os.getenv('HOME') -> os.getenv('USERPROFILE')
 
 ===============================
 MultiplicationStation-0.6.2

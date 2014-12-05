@@ -15,7 +15,10 @@
 
 ***********************************************************/
 """
+
 import wx
+import wx.html2 as webview
+
 import os,string,time
 from cfgctrl import *
 from cfgctrlobj import *
@@ -57,14 +60,24 @@ class wxAdmin(wx.Dialog):
 		win = self.makeGlobalsPanel(nb)
 		nb.AddPage(win, "Globals")
 		
-		win = self.makeColorPanel(nb,wx.RED)
-		nb.AddPage(win, "Red")
+		win = self.makeEditorPanel(nb,"README")
+		nb.AddPage(win, "ReadMe")
 		
-		win = self.makeColorPanel(nb,wx.YELLOW)
-		nb.AddPage(win, "Yellow")
+		win = self.makeEditorPanel(nb,"INSTALL")
+		nb.AddPage(win, "Install")
 		
-		win = self.makeColorPanel(nb,wx.GREEN)
-		nb.AddPage(win, "Green")
+		win = self.makeEditorPanel(nb,"LICENSE")
+		nb.AddPage(win, "License")
+
+		try:
+			win = self.makeWebViewPanel(nb,"http://www.asymptopia.org")
+			nb.AddPage(win, "Asymptopia")
+		except:pass
+		
+		try:
+			win = self.makeWebViewPanel(nb,"http://www.autoteach.net")
+			nb.AddPage(win, "AutoTeach")
+		except:pass
 		
 		p2 = wx.Window(splitter, style=wx.BORDER_SUNKEN)
 		p2.SetBackgroundColour("pink")
@@ -75,6 +88,36 @@ class wxAdmin(wx.Dialog):
 		
 		splitter.SetMinimumPaneSize(20)
 		splitter.SplitVertically(nb, p2, 650)
+	
+	def makeWebViewPanel(self,parent,url):
+		wv = webview.WebView.New(parent)
+		wv.LoadURL(url)
+		return wv
+		
+	def makeEditorPanel(self,parent,fname):
+		p = wx.Panel(parent, -1)
+		win=wx.TextCtrl(p,wx.NewId(),style=wx.TE_MULTILINE|wx.TE_PROCESS_TAB)
+		p.win=win
+		
+		xid=wx.NewId()
+		closeB=wx.Button(p,xid,"Close",(300,5),wx.DefaultSize)
+		closeB.SetToolTip(wx.ToolTip('Close this window'))
+		wx.EVT_BUTTON(p,xid,self.logoutCB)
+		
+		inf=open(os.path.join(self.env.sitepkgdir,self.global_config['APPNAME'],fname))
+		gpl=inf.read()
+		inf.close()
+		win.WriteText(gpl)
+		win.SetEditable(0)
+		def OnCPSize(evt, win=win):
+			#print 'OnCPSize'
+			win.SetPosition((0,50))
+			win.SetSize(evt.GetSize())
+			#print evt.GetSize()
+			
+		p.Bind(wx.EVT_SIZE, OnCPSize)
+		
+		return p
 		
 	def makeGlobalsPanel(self,parent):
 		p = wx.Panel(parent, -1)
