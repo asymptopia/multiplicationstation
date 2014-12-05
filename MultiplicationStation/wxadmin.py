@@ -17,7 +17,9 @@
 """
 
 import wx
-import wx.html2 as webview
+
+try:import wx.html2 as webview
+except:pass
 
 import os,string,time
 from cfgctrl import *

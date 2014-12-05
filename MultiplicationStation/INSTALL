@@ -10,7 +10,7 @@ Dependencies:
 	Python 2.7 , PyGame, SDL
 
 Optional:	
-	wxPython-3.*
+	wxPython-2.8 or wxpython-3.0
 
 Local Installation:
 	unzip package to home directory
@@ -40,13 +40,13 @@ Dependencies:
 	Python 2.7, PyGame, SDL
 
 Optional:
-	wxPython-3.*
+	wxPython-2.8 or wxPython-3.0
 
 Installation Procedure:
 	unzip the package
 	cd into package directory
 	python ./mstation.py
 		or
-	python ./mstation.py -wx  (if wxPython >= v3.0 installed)
+	python ./mstation.py -wx 
 	
 ==========================================
