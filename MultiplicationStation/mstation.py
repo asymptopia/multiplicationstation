@@ -9,9 +9,9 @@
 
     Author          :Charles B. Cosse
 
-    Email           :ccosse@gmail.com
+    Email           :ccosse@asymptopia.org
 
-    Copyright       :(C) 2006-2010 Asymptopia Software
+    Copyright       :(C) 2006-2015 Asymptopia Software
 
     License         :GPLv3
 
@@ -197,6 +197,10 @@ class MultiplicationStation:
 				self.MODE=2
 				self.STOP_RUNNING=1
 				return
+			
+			elif self.quit_button.rect.collidepoint(pygame.mouse.get_pos()):
+				self.AMFULLSCREEN=0
+				sys.exit()
 				
 			elif self.play_button.rect.collidepoint(pygame.mouse.get_pos()) and self.MODE==0:
 				self.MODE=1
@@ -738,14 +742,20 @@ class MultiplicationStation:
 			self.global_config['WIN_W']['value']-self.admin_button.get_width()/2-reveal,
 			self.global_config['WIN_H']['value']-self.admin_button.get_height()/2-H0
 		)
-		
-		self.play_button=Button(self.global_config,'Play',self.bfont)
-		self.play_button.rect.center=(#NOTE: THIS IS *CENTER*
+
+		self.quit_button=Button(self.global_config,'Quit',self.bfont)
+		self.quit_button.rect.center=(#NOTE: THIS IS *CENTER*
 			self.global_config['WIN_W']['value']-self.admin_button.get_width()/2-reveal,
 			self.global_config['WIN_H']['value']-self.admin_button.get_height()/2-H0+50
 		)
 		
-		self.adminbuttongroup=pygame.sprite.Group([self.admin_button,self.play_button])
+		self.play_button=Button(self.global_config,'Play',self.bfont)
+		self.play_button.rect.center=(#NOTE: THIS IS *CENTER*
+			self.global_config['WIN_W']['value']-self.admin_button.get_width()/2-reveal,
+			self.global_config['WIN_H']['value']-self.admin_button.get_height()/2-H0+100
+		)
+		
+		self.adminbuttongroup=pygame.sprite.Group([self.admin_button,self.quit_button,self.play_button])
 		self.adminbuttons=pygame.sprite.RenderPlain(self.adminbuttongroup)
 		
 		
@@ -901,12 +911,14 @@ class MultiplicationStation:
 			u'Millie and Jordan',
 			u'* And * Kids * Everywhere *',
 			u'',
-			u'MultiplicationStation Version 0.6.2',
-			u'January 17, 2010',
+			u'MultiplicationStation Version 0.6.8',
+			u'December 5, 2014',
 			u'',
 			u'Author:Charles B. Coss'+u'\xe9',
-			u'Contact:ccosse@gmail.com', 
+			u'Contact:ccosse@asymptopia.org', 
 			u'Website: www.asymptopia.org',
+			u'Forum: www.asymptopia.org/forum',
+			
 		]
 		
 		y0=self.global_config['WIN_H']['value']/2-len(msgs)/2.*linesize[1]
@@ -962,7 +974,7 @@ class MultiplicationStation:
 		self.helpstring="Help:F9"
 		hsurf=self.cfont.render(self.helpstring,1,self.global_config['COLOR_BG_BUTTON']['value'],(0,0,0))
 		hsurf.set_colorkey(self.global_config['COLOR_BG']['value'])
-		H0=self.global_config['WIN_H']['value']-50
+		H0=self.global_config['WIN_H']['value']-100
 		xhelp=self.global_config['WIN_W']['value']-self.admin_button.get_width()/2-50
 		yhelp=self.global_config['WIN_H']['value']-self.admin_button.get_height()/2-H0+80
 		
@@ -1062,7 +1074,7 @@ class MultiplicationStation:
 			'',
 			'**********************************************************',
 			'*                                                        *',
-			'*   You are using version 0.6.2 from January 17, 2010    *',
+			'*   You are using version 0.6.8 from December 5, 2014    *',
 			'*                                                        *',
 			'*                http://www.asymptopia.org               *',
 			'*                                                        *',

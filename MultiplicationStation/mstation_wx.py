@@ -11,7 +11,7 @@
 
     Email           :ccosse@asymptopia.org
 
-    Copyright       :(C) 2006-2010 Asymptopia Software
+    Copyright       :(C) 2006-2015 Asymptopia Software
 
     License         :GPLv3
 
