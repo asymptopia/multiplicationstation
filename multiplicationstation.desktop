@@ -1,10 +1,13 @@
 [Desktop Entry]
 Name=multiplicationstation Admin
 Name[ru]=multiplicationstation #####
+Name[it]=Amministratore multiplicationstation
 GenericName=Mental calculation
 GenericName[ru]=###### ####
+GenericName[ru]=Calcolo a mente
 Comment=Math game will teach your child to add, subtract and multiply with administration mode enabled
 Comment[ru]=######### ### ########## ##### # ###### ##### (##### ##############)
+Comment[it]=Un gioco matematico che insegnerà al tuo bambino a sommare, sottrarre e moltiplicare con la modalità amministratore attiva
 Exec=%{_gamesbindir}/%{name} -wx
 Icon=%{name}
 Terminal=false
@@ -14,8 +17,10 @@ Categories=Game;BoardGame;
 Name=multiplicationstation
 GenericName=Mental calculation
 GenericName[ru]=###### ####
+GenericName[it]=Calcolo a mente
 Comment=Math game will teach your child to add, subtract and multiply
 Comment[ru]=######### ### ########## ##### # ###### #####
+Comment[it]=Gioco matematico che insegnerà al tuo bambino a sommare, sottrarre e moltiplicare
 Exec=%{_gamesbindir}/%{name}
 Icon=%{name}
 Terminal=false
