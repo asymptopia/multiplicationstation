@@ -10,14 +10,3 @@ Icon=%{name}
 Terminal=false
 Type=Application
 Categories=Game;BoardGame;
-[Desktop Entry]
-Name=multiplicationstation
-GenericName=Mental calculation
-GenericName[ru]=###### ####
-Comment=Math game will teach your child to add, subtract and multiply
-Comment[ru]=######### ### ########## ##### # ###### #####
-Exec=%{_gamesbindir}/%{name}
-Icon=%{name}
-Terminal=false
-Type=Application
-Categories=Game;BoardGame;
