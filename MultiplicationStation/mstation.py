@@ -7,6 +7,8 @@
 
     Website         :www.asymptopia.org
 
+    Support         :www.asymptopia.org/forum
+
     Author          :Charles B. Cosse
 
     Email           :ccosse@asymptopia.org
@@ -916,8 +918,8 @@ class MultiplicationStation:
 			u'Millie and Jordan',
 			u'* And * Kids * Everywhere *',
 			u'',
-			u'MultiplicationStation Version 0.6.8',
-			u'December 5, 2014',
+			u'MultiplicationStation Version 0.8.0',
+			u'December 6, 2014',
 			u'',
 			u'Author:Charles B. Coss'+u'\xe9',
 			u'Contact:ccosse@asymptopia.org', 
@@ -1079,7 +1081,7 @@ class MultiplicationStation:
 			'',
 			'**********************************************************',
 			'*                                                        *',
-			'*   You are using version 0.6.8 from December 5, 2014    *',
+			'*   You are using version 0.8.0 from December 6, 2014    *',
 			'*                                                        *',
 			'*                http://www.asymptopia.org               *',
 			'*                                                        *',
