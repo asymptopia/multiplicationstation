@@ -17,6 +17,7 @@
 ***********************************************************/
 """
 import os,sys,string,time
+sys.path.append('/usr/share/games/multiplicationstation/lib')
 from MultiplicationStation.mstation import *
 
 def usage():

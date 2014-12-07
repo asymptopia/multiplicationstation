@@ -807,7 +807,12 @@ class MultiplicationStation:
 		infname=os.path.join(homedir,'.mstation_config')
 		
 		if not os.path.exists(infname):
+			
 			master_fname=os.path.join(self.env.fontdir,'.mstation_config_master')
+			candidate=os.path.join('/','usr','share','games','multiplicationstation','.mstation_config_master')
+			if os.path.exists(candidate):
+				master_fname=candidate
+				
 			if self.env.OS=='win':
 				cmd="copy %s %s"%(master_fname,os.path.join(homedir,'.mstation_config'))
 				if DEBUG:print cmd

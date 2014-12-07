@@ -39,6 +39,12 @@ class Environment:
 				if sitepkgdir[-13:]=='site-packages':break
 			configdir=os.getenv('HOME')
 			fontdir=os.path.join('/','var','games',appname)#,os.path.basename(appname)
+			
+			if os.path.exists("/usr/share/games/multiplicationstation"):
+				sitepkgdir=os.path.join('/','usr','share','games','multiplicationstation', 'lib')
+				configdir=os.path.join('/','usr','share','games','multiplicationstation')#,os.path.basename(appname)
+				fontdir=os.path.join('/','usr','share','games','multiplicationstation')#,os.path.basename(appname)
+
 			homedir=os.getenv('HOME')
 		
 		elif OS=='win':
@@ -56,20 +62,23 @@ class Environment:
 			homedir=os.getenv('HOME')
 		
 		#If application hasn't been installed (via setup.py) then try to run from tgz directory:
-		if os.path.exists(appname) and os.path.exists('mstation.py'):#if yes, then probably want to be running w/o installing.
-			sitepkgdir='.'
-			fontdir='.'
-			configdir='.'
-			homedir=os.getenv('HOME')
-			if not homedir:homedir=os.getenv('USERPROFILE')
-		elif os.path.exists(os.path.join(sitepkgdir,appname,'mstation.py')):pass
-		elif os.path.exists(os.path.join(sitepkgdir,appname,'mstation.py')) and OS=='win':pass
+		if os.path.exists("/usr/share/games/multiplicationstation"):pass
 		else:
-			sitepkgdir='.'
-			fontdir='.'
-			configdir='.'
-			homedir=os.getenv('HOME')
-			if not homedir:homedir=os.getenv('USERPROFILE')
+			if os.path.exists(appname) and os.path.exists('mstation.py'):#if yes, then probably want to be running w/o installing.
+				sitepkgdir='.'
+				fontdir='.'
+				configdir='.'
+				homedir=os.getenv('HOME')
+				if not homedir:homedir=os.getenv('USERPROFILE')
+			elif os.path.exists(os.path.join(sitepkgdir,appname,'mstation.py')):pass
+			elif os.path.exists(os.path.join(sitepkgdir,appname,'mstation.py')) and OS=='win':pass
+			else:
+				sitepkgdir='.'
+				fontdir='.'
+				configdir='.'
+				homedir=os.getenv('HOME')
+				if not homedir:homedir=os.getenv('USERPROFILE')
+		
 		self.OS=OS
 		self.sitepkgdir=sitepkgdir
 		self.fontdir=fontdir
