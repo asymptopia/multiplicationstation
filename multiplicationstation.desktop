@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=multiplicationstation Admin
+Name[ru]=multiplicationstation #####
+GenericName=Mental calculation
+GenericName[ru]=###### ####
+Comment=Math game will teach your child to add, subtract and multiply with administration mode enabled
+Comment[ru]=######### ### ########## ##### # ###### ##### (##### ##############)
+Exec=%{_gamesbindir}/%{name} -wx
+Icon=%{name}
+Terminal=false
+Type=Application
+Categories=Game;BoardGame;
