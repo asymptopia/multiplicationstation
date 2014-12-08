@@ -1,0 +1,15 @@
+include .mstation_config_master 
+include CHANGES
+include INSTALL
+include LICENSE
+include mstation
+include mstation.ico
+include mstation.py
+include multiplicationstation-0.8.0.png
+include multiplicationstation-admin.desktop
+include multiplicationstation.desktop
+include README.md
+include VERSION
+recursive-include Font *
+recursive-include MultiplicationStation/Images *
+recursive-include MultiplicationStation/Sounds *

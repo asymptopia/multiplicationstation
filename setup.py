@@ -17,7 +17,19 @@
 ***********************************************************/
 """
 import os,sys
+from setuptools import setup
+
 APPNAME='MultiplicationStation'
+
+setup(name='multiplicationstation',
+	version='0.6.8',
+	description='pygame program that will teach your kids to add, subtract and multiply',
+	url='http://www.asymptopia.org',
+	author='Charles B. Cosse',
+	author_email='ccosse@asymptopia.org',
+	include_package_data=True,
+	license='GPLV3',
+	packages=[APPNAME],)
 
 for sitepkgdir in sys.path:
 	if sitepkgdir[-13:]=='site-packages':break
