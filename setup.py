@@ -6,11 +6,13 @@
 
     Website         :www.asymptopia.org
 
+    Support         :www.asymptopia.org/forum
+
     Author          :Charles B. Cosse
 
     Email           :ccosse@asymptopia.org
 
-    Copyright       :(C) 2006-2010 Asymptopia Software
+    Copyright       :(C) 2006-2015 Asymptopia Software
 
     License         :GPLv3
 
@@ -22,7 +24,7 @@ from setuptools import setup
 APPNAME='MultiplicationStation'
 
 setup(name='multiplicationstation',
-	version='0.6.8',
+	version='0.8.1',
 	description='pygame program that will teach your kids to add, subtract and multiply',
 	url='http://www.asymptopia.org',
 	author='Charles B. Cosse',
