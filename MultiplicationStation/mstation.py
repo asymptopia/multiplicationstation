@@ -43,6 +43,7 @@ class MultiplicationStationApp:
 		
 		mode=0
 		fs=-1
+		self.AMFULLSCREEN=False
 		
 		while True:
 			
@@ -254,12 +255,8 @@ class MultiplicationStation:
 			elif event.key==K_F10:
 				self.go_credit()
 			
-			elif event.key==K_F12:
-				try:
-					self.AMFULLSCREEN*=-1
-					pygame.display.toggle_fullscreen()
-				except Exception,e:
-					pass
+			elif event.key==K_F6:
+				self.go_fullscreen()
 					
 			elif event.key == K_ESCAPE:
 				self.MODE-=1
@@ -288,6 +285,18 @@ class MultiplicationStation:
 					if DEBUG:print e
 					pass
 					
+
+	def go_fullscreen(self):
+		if self.AMFULLSCREEN==True:
+			try:
+				s=pygame.display.set_mode((0,0))
+				self.AMFULLSCREEN=False
+			except Exception,e:print e
+		else:
+			try:
+				s=pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+				self.AMFULLSCREEN=True
+			except Exception,e:print e
 
 	def reset_grid(self):
 		
@@ -863,10 +872,10 @@ class MultiplicationStation:
 			u'                         HELP                          ',
 			u'-------------------------------------------------------',
 			u'                                                       ',
+			u'F6  Key: Fullscreen                                    ',
 			u'F9  Key: Show help                                     ',
 			u'F10 Key: Show credits                                  ',
 			u'F11 Key: Screenshot to HOME directory                  ',
-			u'F12 Key: Fullscreen (Linux only)                       ',
 			u'ESC Key: Exit                                          ',
 			u'                                                       ',
 			u'mstation -wx for admin control panel                   ',
@@ -918,8 +927,8 @@ class MultiplicationStation:
 			u'Millie and Jordan',
 			u'* And * Kids * Everywhere *',
 			u'',
-			u'MultiplicationStation Version 0.8.0',
-			u'December 6, 2014',
+			u'MultiplicationStation Version 0.8.1',
+			u'December 8, 2014',
 			u'',
 			u'Author:Charles B. Coss'+u'\xe9',
 			u'Contact:ccosse@asymptopia.org', 
@@ -1020,9 +1029,8 @@ class MultiplicationStation:
 				elif event.key==K_F10:
 					self.go_credit()
 					
-				elif event.key ==K_F12:
-					pygame.display.toggle_fullscreen()
-					self.AMFULLSCREEN*=-1
+				elif event.key ==K_F6:
+					self.go_fullscreen()
 					
 				elif event.key==K_F11:
 					try:self.take_screenshot()
@@ -1072,16 +1080,12 @@ class MultiplicationStation:
 		
 		pygame.image.save(display_surface,oufname)
 
-	def go_fullscreen(self):
-		self.AMFULLSCREEN=pygame.display.toggle_fullscreen()
-		if DEBUG:print 'self.AMFULLSCREEN=',self.AMFULLSCREEN
-
 	def on_exit(self):
 		lines=[
 			'',
 			'**********************************************************',
 			'*                                                        *',
-			'*   You are using version 0.8.0 from December 6, 2014    *',
+			'*   You are using version 0.8.1 from December 8, 2014    *',
 			'*                                                        *',
 			'*                http://www.asymptopia.org               *',
 			'*                                                        *',
